@@ -2,11 +2,11 @@
 
 UInt8 ReverseInteger(UInt8 n) {
     UInt8 result = 0;
-    for (NSUInteger i = 0; i < 8; i++) {
-        if (n % 2) {
-            result += pow(2, 7 - i);
-        }
-        n /= 2;
+    
+    for (int i = 0; i < 8; i++) {
+        result = (result << 1) | (n & 1);
+        n >>= 1;
     }
+    
     return result;
 }
